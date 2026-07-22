@@ -1,6 +1,6 @@
 package org.example.lesson3
 
-fun main(){
+fun main() {
 
     val daytimeGreeting = "Доброе утро"
     val eveningGreeting = "Добрый вечер"
