@@ -8,10 +8,10 @@ fun main() {
 
     var age = 20
 
-    println("${lastName.trim()} ${firstName.trim()} ${middleName.trim()}, $age")
+    println("[${lastName.trim()} ${firstName.trim()} ${middleName.trim()}, $age]")
 
     lastName = "Сидорова"
     age = 22
 
-    println("${lastName.trim()} ${firstName.trim()} ${middleName.trim()}, $age")
+    println("[${lastName.trim()} ${firstName.trim()} ${middleName.trim()}, $age]")
 }
