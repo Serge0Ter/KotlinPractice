@@ -14,5 +14,4 @@ fun main() {
     age = 22
 
     println("${lastName.trim()} ${firstName.trim()} ${middleName.trim()}, $age")
-
 }
