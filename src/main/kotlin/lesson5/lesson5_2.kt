@@ -10,5 +10,4 @@ fun main() {
     val userYear = readln().toIntOrNull() ?: 0
     val result = currentYear - userYear
     if (result >= AGE_OF_MAJORITY) println("Показать экран со скрытым контентом")
-    else println("Доступ запрещен")
 }
