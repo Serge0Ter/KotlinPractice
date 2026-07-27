@@ -10,10 +10,13 @@ fun main() {
     print("Введите второе число: ")
     val number2 = readln().toIntOrNull() ?: 0
 
+    val set = setOf(number1, number2)
+    val win = setOf(WIN_NUMBER_2, WIN_NUMBER_1)
+
     when {
-        number2 == WIN_NUMBER_2 && number1 == WIN_NUMBER_1 -> println("Поздравляем! Вы выиграли главный приз!")
-        number2 == WIN_NUMBER_2 || number1 == WIN_NUMBER_1 -> println("Вы выиграли утешительный приз!")
-        else -> println("Неудача!")
+        set == win -> println("Поздравляем! Вы выиграли главный приз!")
+        WIN_NUMBER_1 in set || WIN_NUMBER_2 in set -> println("Вы выиграли утешительный приз!")
+        WIN_NUMBER_1 !in set || WIN_NUMBER_2 !in set -> println("Неудача!")
     }
     println("Нужные числа для победы: $WIN_NUMBER_1 и $WIN_NUMBER_2")
 }
