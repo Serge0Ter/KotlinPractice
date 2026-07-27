@@ -11,4 +11,5 @@ fun main() {
     val tomorrow = ALL_TABLE > bookedTomorrow
 
     println("Доступность столиков на сегодня: $today\nДоступность столиков на завтра: $tomorrow")
+
 }
