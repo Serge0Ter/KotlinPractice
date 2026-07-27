@@ -12,7 +12,7 @@ fun main() {
 
     println(
         "Груз с весом $weightPackage кг и объемом $volumePackage л соответствует категории 'Average':" +
-                " ${((weightPackage > MIN_WEIGHT) || !(weightPackage >= MAX_WEIGHT)) && (volumePackage < MAX_VOLUME)}"
+                " ${((weightPackage > MIN_WEIGHT) && !(weightPackage >= MAX_WEIGHT)) && (volumePackage < MAX_VOLUME)}"
     )
 
     weightPackage = 50
@@ -20,6 +20,6 @@ fun main() {
 
     println(
         "Груз с весом $weightPackage кг и объемом $volumePackage л соответствует категории 'Average':" +
-                " ${((weightPackage > MIN_WEIGHT) || !(weightPackage >= MAX_WEIGHT)) && (volumePackage < MAX_VOLUME)}"
+                " ${((weightPackage > MIN_WEIGHT) && !(weightPackage >= MAX_WEIGHT)) && (volumePackage < MAX_VOLUME)}"
     )
 }
