@@ -1,7 +1,7 @@
 package org.example.lesson4
 
 private const val SHIP_IS_DAMAGED = true
-private val CREW_COUNT = 50..70
+private val CREW_COUNT = 55..70
 private const val PROVISIONS = 50
 private const val WEATHER_IS_GOOD = true
 
@@ -16,7 +16,7 @@ fun main() {
     val weatherIsGood = readln().toBoolean()
 
     (((isDamage != SHIP_IS_DAMAGED) && (crewCount in CREW_COUNT) && (foodCount > PROVISIONS)) ||
-            ((crewCount == CREW_COUNT.last) && (weatherIsGood == WEATHER_IS_GOOD) && (foodCount > PROVISIONS))).also {
+            ((crewCount == CREW_COUNT.last) && (weatherIsGood == WEATHER_IS_GOOD) && (foodCount >= PROVISIONS))).also {
         println("Can the ship set sail? $it")
     }
 }
