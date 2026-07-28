@@ -4,10 +4,16 @@ package org.example.lesson5
 fun main() {
 
     val randomNumbers = generateSequence { (0..42).random() }.distinct().take(3).toList()
-    print("Введи 3 числа через пробел: ")
-    val userNumbers = readln().split(" ").toList().map { it.toInt() }
+    print("Введи 1 число: ")
+    val number1 = readln().toInt()
+    print("Введи 2 число: ")
+    val number2 = readln().toInt()
+    print("Введи 3 число: ")
+    val number3 = readln().toInt()
+    val userNumbers = listOf(number1, number2, number3)
     val numbersForWins = userNumbers intersect randomNumbers
-    when (numbersForWins.size) {
+    val size = numbersForWins.size
+    when (size) {
         3 -> {
             println("Вы угадали все числа и выиграли джекпот")
         }
