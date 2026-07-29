@@ -10,7 +10,6 @@ fun main() {
         when (userNumber) {
             0 -> {
                 println("Неверное число или значение. У тебя осталось попыток: ${--attempt}")
-                attempt--
             }
 
             numberForWins -> {
