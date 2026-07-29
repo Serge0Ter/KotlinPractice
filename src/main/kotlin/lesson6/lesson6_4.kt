@@ -4,7 +4,6 @@ fun main() {
 
     val numberForWins = (1..9).random()
     var attempt = 5
-    println(numberForWins)
     while (attempt > 0) {
         print("Введи число от 1 до 9: ")
         val userNumber = readln().toIntOrNull() ?: 0
@@ -22,6 +21,6 @@ fun main() {
             else -> println("Попробуй еще раз. У тебя осталось попыток: ${--attempt}")
         }
     }
-    println("Вы проиграли. Загадано было число: $numberForWins")
+    println("Было загадано число $numberForWins")
 
 }
