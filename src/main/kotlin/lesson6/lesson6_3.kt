@@ -11,5 +11,4 @@ fun main() {
     } while (userSeconds > 0)
 
     println("Время вышло")
-
 }
