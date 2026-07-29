@@ -17,7 +17,7 @@ fun main() {
             }
 
             number1 + number2 -> {
-                println("Добро пожаловать")
+                println("Добро пожаловать!")
                 return
             }
             else -> {
