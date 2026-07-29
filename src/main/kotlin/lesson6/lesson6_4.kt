@@ -9,7 +9,7 @@ fun main() {
         val userNumber = readln().toIntOrNull() ?: 0
         when (userNumber) {
             0 -> {
-                println("Неверное число или значение")
+                println("Неверное число или значение. У тебя осталось попыток: ${--attempt}")
                 attempt--
             }
 
