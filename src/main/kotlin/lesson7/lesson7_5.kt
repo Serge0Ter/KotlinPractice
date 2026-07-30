@@ -12,7 +12,6 @@ fun main() {
         }
 
         false -> {
-            println("Слишком короткий")
             println(generationPassword(DEFAULT_LENGTH_PASSWORD))
         }
     }
@@ -24,6 +23,6 @@ fun generationPassword(length: Int): String {
     val upper = 'A'..'Z'
     val allPool = digits + lower + upper
     val mandatory = listOf(digits.random(), lower.random(), upper.random())
-    val remaining = allPool.shuffled().take(length - 3)
+    val remaining = List(length - 3) { allPool.random() }
     return (mandatory + remaining).shuffled().joinToString("")
 }
