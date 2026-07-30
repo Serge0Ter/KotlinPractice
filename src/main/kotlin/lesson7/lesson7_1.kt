@@ -2,7 +2,7 @@ package org.example.lesson7
 
 fun main() {
 
-    val numbers = 1..9
+    val numbers = 0..9
     val chars = 'a'..'z'
 
     var password = ""
