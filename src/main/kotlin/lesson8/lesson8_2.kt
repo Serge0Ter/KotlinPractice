@@ -10,6 +10,6 @@ fun main() {
             println("Ингредиент $input в рецепте есть")
             break
         }
-        else println("Такого ингредиента в рецепте нет")
     }
+    if (!ingredients.contains(input)) println("Такого ингредиента в рецепте нет")
 }
