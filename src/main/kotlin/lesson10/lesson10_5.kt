@@ -1,27 +1,20 @@
 package org.example.lesson10
 
-const val LOGIN = "admin"
-const val PASSWORD = "12345"
-
 fun main() {
+    val login = "admin"
+    val password = "admin"
+    val verify = verifyCredentials(login, password)
+    if (verify == null) println("Неверный логин или пароль") else println(showProduct(verify))
 
-    print("Введите логин: ")
-    val login = readln()
-    print("Введите пароль: ")
-    val password = readln()
-    showProduct(isAuth(login, password))
 
 }
 
-fun isAuth(login: String, password: String): String? {
-    val result = if (login == LOGIN && password == PASSWORD) {
+fun verifyCredentials(login: String, password: String): String? {
+    val result = if (login == "admin" && password == "admin") {
         val char = "ABCDEFabcdef0123456789"
         (1..32).map { char.random() }.joinToString("")
     } else null
     return result
 }
 
-fun showProduct(auth: String?) {
-    val listProducts = listOf("Морковь", "Лук", "Картофель")
-    if (auth == null) println("Неверный логин или пароль") else println(listProducts)
-}
+fun showProduct(auth: String) = listOf("Морковь", "Лук", "Картофель")
