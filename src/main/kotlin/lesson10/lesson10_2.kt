@@ -2,7 +2,7 @@ package org.example.lesson10
 
 fun main() {
     print("Введите логин: ")
-    val login = readln().trim()
+    val login = readln()
     print("Введите пароль: ")
     val password = readln().trim()
     if (isValid(login, password)) println("Добро пожаловать") else println("Логин или пароль недостаточно длинные")
