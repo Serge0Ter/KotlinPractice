@@ -1,6 +1,6 @@
 package org.example.lesson11
 
-class User(val id: Int, val login: String, var password: String, val mail: String, var bio: String) {
+class User2(val id: Int, val login: String, var password: String, val mail: String, var bio: String = "") {
     fun userInfo() {
         println("$id $login $password $mail $bio")
     }
@@ -22,7 +22,8 @@ class User(val id: Int, val login: String, var password: String, val mail: Strin
 
 fun main() {
 
-    val user = User(1, "Sir", "123", "sir@bk", "")
+    val user = User2(1, "Sir", "123", "sir@bk")
+    user.inputBio()
     user.changePassword()
     user.userInfo()
 
