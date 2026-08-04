@@ -1,7 +1,7 @@
 package org.example.lesson10
 
 fun main() {
-    var count = 0
+
     var win = true
     var userSoccer = 0
     var computerSoccer = 0
@@ -16,13 +16,11 @@ fun main() {
                 computerSoccer++
             }
 
-            "Ничья" -> {
-                userSoccer++; computerSoccer++
-            }
+            "Ничья" -> {}
         }
-        print("Сыграем еще раз: ")
+        println("Хотите бросить кости еще раз? Введите Да или Нет")
         val input = readln().trim()
-        if (input.equals("да", ignoreCase = true)) count++ else win = false
+        if (input.equals("нет", ignoreCase = true)) win = false
     }
     println("Ты выиграл $userSoccer раз")
 
@@ -42,4 +40,4 @@ fun playGame(): String {
     }
 }
 
-fun generateNumber(): Int = (1..9).random()
+fun generateNumber(): Int = (1..6).random()
