@@ -4,7 +4,7 @@ fun main() {
     print("Введите логин: ")
     val login = readln()
     print("Введите пароль: ")
-    val password = readln().trim()
+    val password = readln()
     if (isValid(login, password)) println("Добро пожаловать") else println("Логин или пароль недостаточно длинные")
 }
 
