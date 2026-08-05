@@ -13,8 +13,8 @@ class Room(
     val listUsers: MutableList<User3> = mutableListOf<User3>(),
 ) {
 
-    fun addUserToRoom(user: User3): MutableList<User3> {
-        return listUsers.apply { add(user) }
+    fun addUserToRoom(user: User3) {
+        listUsers.apply { add(user) }
     }
 
     fun changeStatusUser(nickName: String, status: String) {
