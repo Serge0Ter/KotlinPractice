@@ -6,27 +6,27 @@ class User3(val id: Int, var nickName: String, var avatar: String, var status: S
     }
 }
 
-class Room(val id: Int, var title: String, var cover: String, val listUsers: List<User3>) {
+class Room(
+    val id: Int,
+    var title: String,
+    var cover: String,
+    val listUsers: MutableList<User3> = mutableListOf<User3>(),
+) {
 
-    fun addUserToRoom(user: User3): List<User3> {
-        val newList = listUsers.toMutableList().apply {
-            add(user)
-        }
-        return newList.toList()
+    fun addUserToRoom(user: User3): MutableList<User3> {
+        return listUsers.apply { add(user) }
     }
 
     fun changeStatusUser(nickName: String, status: String) {
-        listUsers.filter {
+        listUsers.find {
             it.nickName == nickName
-        }.map {
-            it.changeStatus(status)
-        }
+        }?.changeStatus(status)
     }
 }
 
 fun main() {
 
-    val room = Room(1, "Практика kotlin", "", listOf())
+    val room = Room(1, "Практика kotlin", "")
     val user1 = User3(1, "Sir", "", "микрофон выключен")
     val user2 = User3(2, "Ser", "", "микрофон выключен")
     val user3 = User3(3, "Lir", "", "разговаривает")
