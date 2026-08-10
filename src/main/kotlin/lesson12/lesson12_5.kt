@@ -9,17 +9,20 @@ class Weather5(day: Int, night: Int, cloudy: Boolean) {
     init {
         require(day >= 0) { "Температура $day ниже нуля" }
         require(night >= 0) { "Температура $night ниже нуля" }
-        println("Днем: $dayTemp C Вечеров: $nightTemp C Дождь: $isCloudy")
     }
 }
 
 fun main() {
 
-    val list = List(30) {
-        Weather5(
-            day = (0..100).random(),
-            night = (0..100).random(),
-            cloudy = listOf(true, false).random(),
+    val list = mutableListOf<Weather5>()
+
+    repeat(30) {
+        list.add(
+            Weather5(
+                day = (0..100).random(),
+                night = (0..100).random(),
+                cloudy = listOf(true, false).random(),
+            )
         )
     }
     val day = list.map {
@@ -30,7 +33,7 @@ fun main() {
     }.average()
     val rainfall = list.map {
         it.isCloudy
-    }.size
+    }.filter { it == true }.size
     println(day)
     println(night)
     println(rainfall)
