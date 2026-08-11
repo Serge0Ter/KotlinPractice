@@ -9,17 +9,21 @@ class PhoneDirectory3(val userName: String, val userPhone: Long?, val userOrgani
 
 fun main() {
     val list = mutableListOf<PhoneDirectory3>()
-    val user = PhoneDirectory3(readln(), readln().toLongOrNull() ?: 0, readln().trim())
-
-    try {
-        user.userPhone?.toLong()
-    } catch (e: Exception) {
-        println(e.message)
-    }
-    if (user.userPhone != 0.toLong()) {
+    while (true) {
+        print("Введи имя: ")
+        val name = readln().trim()
+        if (name.isEmpty()) break
+        val phone = try {
+            print("Введи номер: ")
+            readln().toLong()
+        } catch (e: NumberFormatException) {
+            println(e::class.simpleName)
+            continue
+        }
+        print("Введи организацию: ")
+        val organization = readln().trim().ifEmpty { null }
+        val user = PhoneDirectory3(name, phone, organization)
         list.add(user)
     }
-    list.map { it.printInfoUser() }
-
-
+    list.forEach { it.printInfoUser() }
 }
