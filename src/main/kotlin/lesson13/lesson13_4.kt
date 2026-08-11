@@ -9,9 +9,14 @@ class PhoneDirectory2(val userName: String, val userPhone: Long?, val userOrgani
 
 fun main() {
     val list = mutableListOf<PhoneDirectory2>()
-    val user = PhoneDirectory2(readln(), readln().toLongOrNull() ?: 0, readln().trim())
-    if (user.userPhone != 0.toLong()) {
-        list.add(user)
+    val name = readln()
+    val phone = readln().toLongOrNull()
+    if (phone == null) {
+        println("Некорректный номер")
+        return
     }
+    val organization: String? = readln().trim().ifEmpty { null }
+    val user = PhoneDirectory2(name, phone, organization)
+    list.add(user)
     list.map { it.printInfoUser() }
 }
