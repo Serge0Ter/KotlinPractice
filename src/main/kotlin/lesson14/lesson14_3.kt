@@ -1,7 +1,5 @@
 package org.example.lesson14
 
-const val PI = 3.14
-
 abstract class Figure(val color: String) {
     abstract fun perimeter(): Double
     abstract fun area(): Double
@@ -15,9 +13,9 @@ class Rectangle(color: String, val a: Double, val b: Double) : Figure(color) {
 }
 
 class Circle(color: String, val r: Double) : Figure(color) {
-    override fun perimeter() = 2 * PI * r
+    override fun perimeter() = 2 * r * kotlin.math.PI
 
-    override fun area() = PI * r * r
+    override fun area() = kotlin.math.PI * r * r
 
 }
 
@@ -28,9 +26,9 @@ fun main() {
     val rectangleBlack = Rectangle("black", 15.0, 10.0)
     val rectangleWhite = Rectangle("white", 15.0, 10.0)
     val list = listOf(circleBlack, circleWhite, rectangleBlack, rectangleWhite)
-    val perimeterAllFigures = list.sumOf { it.perimeter() }
-    val areaAllFigures = list.sumOf { it.area() }
-    println(perimeterAllFigures)
-    println(areaAllFigures)
+    val perimeterAllBlackFigures = list.filter { it.color.equals("black", true) }.sumOf { it.perimeter() }
+    val areaAllWhiteFigures = list.filter { it.color.equals("white", true) }.sumOf { it.area() }
+    println(perimeterAllBlackFigures)
+    println(areaAllWhiteFigures)
 
 }
