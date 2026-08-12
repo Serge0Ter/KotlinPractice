@@ -13,7 +13,6 @@ class Icebreaker() : Liner() {
 
 class Freighter() : Liner() {
     override val speed: Int = 10
-    override val capacity: Int = 600
     val cargo: Int = 600
 }
 
