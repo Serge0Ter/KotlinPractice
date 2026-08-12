@@ -9,6 +9,7 @@ open class Liner(
 class Icebreaker : Liner() {
     override val speed: Int = 10
     override val capacity: Int = 300
+    override val cargo: Int = 300
     val isBreakIce: Boolean = true
 }
 
