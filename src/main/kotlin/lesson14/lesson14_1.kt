@@ -3,17 +3,19 @@ package org.example.lesson14
 open class Liner(
     open val speed: Int = 15,
     open val capacity: Int = 500,
+    open val cargo: Int = 500,
 )
 
-class Icebreaker() : Liner() {
+class Icebreaker : Liner() {
     override val speed: Int = 10
     override val capacity: Int = 300
     val isBreakIce: Boolean = true
 }
 
-class Freighter() : Liner() {
+class Freighter : Liner() {
     override val speed: Int = 10
-    val cargo: Int = 600
+    override val capacity: Int = 600
+    override val cargo: Int = 600
 }
 
 fun main() {
