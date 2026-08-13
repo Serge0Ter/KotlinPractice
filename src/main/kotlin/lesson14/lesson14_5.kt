@@ -20,7 +20,9 @@ class Chat {
         messages.forEach { msg ->
             when (msg) {
                 is ChildMessage -> {
-
+                    children[msg.id]?.forEach { child ->
+                        println("\t${child.author}: ${child.message}")
+                    }
                 }
 
                 else -> {
@@ -36,5 +38,4 @@ class Chat {
 
 open class Message(val id: Int, val message: String, val author: String)
 class ChildMessage(id: Int, message: String, author: String, val parentMessageId: Int) : Message(id, message, author)
-
 
