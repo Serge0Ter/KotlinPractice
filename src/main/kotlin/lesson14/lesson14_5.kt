@@ -13,29 +13,29 @@ class Chat {
         messages += ChildMessage(nextId++, message, author, parentMessageId)
     }
 
+    private fun printMessage(msg: Message, level: Int, children: Map<Int, List<ChildMessage>>) {
+        val indent = "\t".repeat(level)
+        println("$indent${msg.id} ${msg.author}: ${msg.message}")
+
+        children[msg.id]?.forEach { child ->
+            printMessage(child, level + 1, children)   // глубина растёт здесь
+        }
+    }
+
     fun printChat() {
         val children = messages
             .filterIsInstance<ChildMessage>()
             .groupBy { it.parentMessageId }
-        messages.forEach { msg ->
-            when (msg) {
-                is ChildMessage -> {
-                    children[msg.id]?.forEach { child ->
-                        println("\t${child.author}: ${child.message}")
-                    }
-                }
 
-                else -> {
-                    println("${msg.id} ${msg.author}: ${msg.message}")
-                    children[msg.id]?.forEach { child ->
-                        println("\t${child.author}: ${child.message}")
-                    }
-                }
+        messages.forEach { msg ->
+            if (msg !is ChildMessage) {            // только корни
+                printMessage(msg, 0, children)
             }
         }
     }
 }
 
 open class Message(val id: Int, val message: String, val author: String)
-class ChildMessage(id: Int, message: String, author: String, val parentMessageId: Int) : Message(id, message, author)
+class ChildMessage(id: Int, message: String, author: String, val parentMessageId: Int) :
+    Message(id, message, author)
 
