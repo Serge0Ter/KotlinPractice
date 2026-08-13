@@ -21,3 +21,14 @@ class CrucianCarp(val name: String) : Swimmable {
 class Seagull(val name: String) : Flyable {
     override fun fly() = println("$name летит")
 }
+
+fun main() {
+
+    val duck = Duck("Уточка")
+    duck.swim()
+    duck.fly()
+    val carp = CrucianCarp("Карп")
+    carp.swim()
+    val seagull = Seagull("Чайка")
+    seagull.fly()
+}
