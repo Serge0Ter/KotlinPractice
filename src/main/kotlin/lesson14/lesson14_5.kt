@@ -5,12 +5,12 @@ class Chat {
     var messages: List<Message> = emptyList()
         private set
 
-    fun addMessage(author: String, message: String) {
-        messages += Message(nextId++, author, message)
+    fun addMessage(message: String, author: String) {
+        messages += Message(nextId++, message, author)
     }
 
-    fun addThreadMessage(parentMessageId: Int, author: String, message: String) {
-        messages += ChildMessage(nextId++, author, message, parentMessageId)
+    fun addThreadMessage(message: String, author: String, parentMessageId: Int) {
+        messages += ChildMessage(nextId++, message, author, parentMessageId)
     }
 
     fun printChat() {
@@ -34,7 +34,7 @@ class Chat {
     }
 }
 
-open class Message(val id: Int, val author: String, val message: String)
-class ChildMessage(id: Int, author: String, message: String, val parentMessageId: Int) : Message(id, author, message)
+open class Message(val id: Int, val message: String, val author: String)
+class ChildMessage(id: Int, message: String, author: String, val parentMessageId: Int) : Message(id, message, author)
 
 
