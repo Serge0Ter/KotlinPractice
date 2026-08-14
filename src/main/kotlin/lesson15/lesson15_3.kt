@@ -26,3 +26,4 @@ class AdminUser(name: String) : User(name), Admin {
 
 }
 
+class DefaultUser(name: String) : User(name)
