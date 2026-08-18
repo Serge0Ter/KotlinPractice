@@ -1,10 +1,11 @@
 package org.example.lesson16
 
-class Player(val name: String, private var health: Int, var damage: Int) {
+class Player(val name: String, private var health: Int, private var damage: Int) {
 
     private fun dead() {
         if (health <= 0) {
             damage = 0
+            health = 0
             println("Смерть")
         }
     }
@@ -15,7 +16,7 @@ class Player(val name: String, private var health: Int, var damage: Int) {
     }
 
     fun healing(health: Int) {
-        this.health += health
+        if (this.health > 0) this.health += health
     }
 }
 
@@ -26,4 +27,5 @@ fun main() {
     player.getDamage(60)
     player.healing(10)
     player.getDamage(40)
+    player.healing(100)
 }
