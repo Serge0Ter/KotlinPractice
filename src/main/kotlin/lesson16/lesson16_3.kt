@@ -1,15 +1,15 @@
 package org.example.lesson16
 
-class User(val login: String) {
-    private val password = "initial"
+class User(val login: String, password: String) {
+    private val password = password
 
     fun auth(password: String): Boolean {
-        return readln() == this.password
+        return password == this.password
     }
 }
 
 fun main() {
-
-    println("Пароль введен верно? ${User(" Ser ").auth("321")}")
+    val user = User("Ser", readln())
+    println("Пароль введен верно? ${user.auth(readln())}")
 
 }
