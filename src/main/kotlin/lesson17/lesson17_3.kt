@@ -2,13 +2,13 @@ package org.example.lesson17
 
 class Package(name: String, countFiles: Int, val secret: Boolean) {
     val name: String = name
-        get() = if (this.secret == true) {
-            "Скрытая папка"
+        get() = if (this.secret) {
+            "скрытая папка"
         } else {
             field
         }
     val countFiles: Int = countFiles
-        get() = if (this.secret == true) 0 else field
+        get() = if (this.secret) 0 else field
 
 }
 
