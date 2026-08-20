@@ -1,17 +1,33 @@
 package org.example.lesson18
 
-class Dice(val countSide: Int) {
-    fun loadingDice(count: Int) {
-        println("Выпало: ${(1..count).random()}")
+open class Dice() {
+    open fun loadingDice() {}
+}
+
+class FourSidedDice() : Dice() {
+    override fun loadingDice() {
+        println("Выпало: ${(1..4).random()}")
+    }
+}
+
+class SixSidedDice() : Dice() {
+    override fun loadingDice() {
+        println("Выпало: ${(1..6).random()}")
+    }
+}
+
+class OctahedralDice() : Dice() {
+    override fun loadingDice() {
+        println("Выпало: ${(1..8).random()}")
     }
 }
 
 fun main() {
 
-    val dice4 = Dice(4)
-    val dice6 = Dice(6)
-    val dice8 = Dice(8)
-    val listDice = listOf<Dice>(dice4, dice6, dice8)
-    listDice.forEach { it.loadingDice(it.countSide) }
+    val dice4 = FourSidedDice()
+    val dice6 = SixSidedDice()
+    val dice8 = OctahedralDice()
+    val listDice = listOf(dice4, dice6, dice8)
+    listDice.forEach { it.loadingDice() }
 }
 
