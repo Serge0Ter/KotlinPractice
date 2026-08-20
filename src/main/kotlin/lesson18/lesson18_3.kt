@@ -1,6 +1,6 @@
 package org.example.lesson18
 
-open class Pet(val name: String) {
+abstract class Pet(val name: String) {
     open fun eat(): String {
         return ""
     }
