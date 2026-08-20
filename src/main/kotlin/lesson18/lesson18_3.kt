@@ -4,6 +4,10 @@ abstract class Pet(val name: String) {
     open fun eat(): String {
         return ""
     }
+
+    open fun sleep() {
+        println("Сплю...")
+    }
 }
 
 class Cat(name: String) : Pet(name) {
