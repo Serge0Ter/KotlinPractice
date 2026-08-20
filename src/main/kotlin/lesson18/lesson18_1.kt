@@ -3,11 +3,11 @@ package org.example.lesson18
 class Order(private val id: Int) {
 
     fun printInfo(products: String) {
-        println("Заказан товар: [$products]")
+        println("Заказан товар: $products")
     }
 
     fun printInfo(products: List<String>) {
-        println("Заказаны следующие товары: [${products.joinToString(" ")}]")
+        println("Заказаны следующие товары: ${products.joinToString(", ")}")
     }
 }
 
