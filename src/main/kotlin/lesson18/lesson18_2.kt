@@ -27,7 +27,7 @@ fun main() {
     val dice4 = FourSidedDice()
     val dice6 = SixSidedDice()
     val dice8 = OctahedralDice()
-    val listDice = listOf(dice4, dice6, dice8)
+    val listDice = listOf<Dice>(dice4, dice6, dice8)
     listDice.forEach { it.loadingDice() }
 }
 
