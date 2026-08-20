@@ -1,12 +1,10 @@
 package org.example.lesson18
 
 abstract class Pet(val name: String) {
-    open fun eat(): String {
-        return ""
-    }
+    abstract fun eat(): String
 
     open fun sleep() {
-        println("Сплю...")
+        println("$name -> сплит")
     }
 }
 
@@ -29,7 +27,6 @@ class Dog(name: String) : Pet(name) {
 }
 
 fun main() {
-
     val listPets = listOf<Pet>(Cat("Барсик"), Dog("Тузик"), Fox("Марфина"))
     listPets.forEach { println("${it.name} -> ${it.eat()}") }
 }
