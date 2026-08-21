@@ -1,31 +1,45 @@
 package org.example.lesson18
 
-abstract class Figure1(val name: String)
-
-class Square(val side: Double) : Figure1("Квадрат") {
+class Square(val side: Double) {
     override fun toString(): String {
-        return "$name сторона: $side"
+        return "Квадрат сторона: $side"
     }
 }
 
-class Dot(val side: Double) : Figure1("Точка") {
+class Dot(val side: Double) {
     override fun toString(): String {
-        return "$name размер: $side"
+        return "Точка размер: $side"
     }
 }
 
-class Circle(val radius: Double) : Figure1("Круг") {
+class Circle(val radius: Double) {
     override fun toString(): String {
-        return "$name радиус: $radius"
+        return "Круг радиус: $radius"
     }
 }
 
-class Screen() {
-    fun draw(coordinatesX: Int, coordinatesY: Int, figure: Figure1): String {
+class Screen {
+    fun draw(coordinatesX: Int, coordinatesY: Int, figure: Square): String {
         return "$figure координаты $coordinatesX : $coordinatesY "
     }
 
-    fun draw(coordinatesX: Float, coordinatesY: Float, figure: Figure1): String {
+    fun draw(coordinatesX: Float, coordinatesY: Float, figure: Square): String {
+        return "$figure координаты $coordinatesX : $coordinatesY "
+    }
+
+    fun draw(coordinatesX: Int, coordinatesY: Int, figure: Dot): String {
+        return "$figure координаты $coordinatesX : $coordinatesY "
+    }
+
+    fun draw(coordinatesX: Float, coordinatesY: Float, figure: Dot): String {
+        return "$figure координаты $coordinatesX : $coordinatesY "
+    }
+
+    fun draw(coordinatesX: Int, coordinatesY: Int, figure: Circle): String {
+        return "$figure координаты $coordinatesX : $coordinatesY "
+    }
+
+    fun draw(coordinatesX: Float, coordinatesY: Float, figure: Circle): String {
         return "$figure координаты $coordinatesX : $coordinatesY "
     }
 }
