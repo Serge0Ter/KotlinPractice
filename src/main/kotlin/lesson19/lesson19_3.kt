@@ -1,11 +1,15 @@
 package org.example.lesson19
 
-enum class ShipStatus {
-    TAKEOFF, LAND, SHUTTING;
+class ShipStatus {
+    fun toTakeOff() {
+        TODO()
+    }
 
-    fun describe(status: ShipStatus): String = when (status) {
-        TAKEOFF -> TODO()
-        LAND -> TODO("здесь нужна информация о дополнительной логике")
-        SHUTTING -> "Отстрел астеройдов"
+    fun land() {
+        TODO("здесь нужна информация о дополнительной логике")
+    }
+
+    fun shutting() {
+        "Отстрел астеройдов"
     }
 }
