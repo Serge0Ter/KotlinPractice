@@ -8,9 +8,9 @@ class Product(val title: String, val id: Int, val categories: Categories) {
     fun printInfo() {
         println(
             when (categories) {
-                Categories.CLOTHING -> "Название товара: $title номер товара: $id категория товара: $categories"
-                Categories.STATIONERY -> "Название товара: $title номер товара: $id категория товара: $categories"
-                Categories.OTHER -> "Название товара: $title номер товара: $id категория товара: $categories"
+                Categories.CLOTHING -> "Название товара: $title номер товара: $id категория товара: ${categories.title}"
+                Categories.STATIONERY -> "Название товара: $title номер товара: $id категория товара: ${categories.title}"
+                Categories.OTHER -> "Название товара: $title номер товара: $id категория товара: ${categories.title}"
             }
         )
     }
