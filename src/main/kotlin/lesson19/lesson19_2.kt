@@ -1,19 +1,18 @@
 package org.example.lesson19
 
-enum class Categories(val title: String) {
-    CLOTHING("Одежда"), STATIONERY("Канцелярия"), OTHER("Остальное")
+enum class Categories {
+    CLOTHING, STATIONERY, OTHER;
+
+    fun printCategory(categories: Categories): String = when (categories) {
+        CLOTHING -> "Одежда"
+        STATIONERY -> "Канцелярия"
+        OTHER -> "Остальное"
+    }
 }
 
 class Product(val title: String, val id: Int, val categories: Categories) {
-    fun printInfo() {
-        println(
-            when (categories) {
-                Categories.CLOTHING -> "Название товара: $title номер товара: $id категория товара: ${categories.title}"
-                Categories.STATIONERY -> "Название товара: $title номер товара: $id категория товара: ${categories.title}"
-                Categories.OTHER -> "Название товара: $title номер товара: $id категория товара: ${categories.title}"
-            }
-        )
-    }
+    fun printInfo() =
+        println("Название товара: $title номер товара: $id категория товара: ${categories.printCategory(this.categories)}")
 }
 
 fun main() {
@@ -27,3 +26,4 @@ fun main() {
 
     list.forEach { it.printInfo() }
 }
+
