@@ -20,12 +20,12 @@ class Circle(val radius: Double) : Figure1("Круг") {
     }
 }
 
-class Screen(val figure: Figure1) {
-    fun draw(coordinatesX: Int, coordinatesY: Int): String {
+class Screen() {
+    fun draw(coordinatesX: Int, coordinatesY: Int, figure: Figure1): String {
         return "$figure координаты $coordinatesX : $coordinatesY "
     }
 
-    fun draw(coordinatesX: Float, coordinatesY: Float): String {
+    fun draw(coordinatesX: Float, coordinatesY: Float, figure: Figure1): String {
         return "$figure координаты $coordinatesX : $coordinatesY "
     }
 }
