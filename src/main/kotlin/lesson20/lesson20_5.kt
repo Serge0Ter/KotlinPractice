@@ -22,7 +22,7 @@ fun main() {
 
     val robot = Robot()
     robot.say()
-    robot.setModifier { it.reversed() }
+    robot.setModifier { it.split(" ").reversed().joinToString(" ") }
     robot.say()
 
 
