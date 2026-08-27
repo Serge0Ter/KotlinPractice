@@ -2,11 +2,11 @@ package org.example.lesson22
 
 data class MainScreenState(val data: String, val isLoading: Boolean = false)
 class MainScreenViewModel {
-    private var mainScreenState: MainScreenState = MainScreenState("отсутствие данных")
+    private var mainScreenState: MainScreenState = MainScreenState("")
     fun loadData() {
-        if (mainScreenState != MainScreenState("наличие загруженных данных", false)) {
-            mainScreenState = mainScreenState.copy(data = "загрузка данных", isLoading = true)
-            mainScreenState = mainScreenState.copy(data = "наличие загруженных данных", isLoading = false)
+        if (mainScreenState != MainScreenState("Kotlin", false)) {
+            mainScreenState = mainScreenState.copy(isLoading = true)
+            mainScreenState = mainScreenState.copy(data = "Kotlin", isLoading = false)
         }
     }
 }
