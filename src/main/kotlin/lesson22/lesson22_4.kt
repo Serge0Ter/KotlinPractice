@@ -1,7 +1,7 @@
 package org.example.lesson22
 
-data class MainScreenState(val data: String, val isLoading: Boolean = false)
 class MainScreenViewModel {
+    data class MainScreenState(val data: String, val isLoading: Boolean = false)
     private var mainScreenState: MainScreenState = MainScreenState("")
     fun loadData() {
         if (mainScreenState != MainScreenState("Kotlin", false)) {
